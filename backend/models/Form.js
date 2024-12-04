@@ -1,8 +1,8 @@
-// backend/models/Template.js
+// backend/models/Form.js
 const { DataTypes } = require("sequelize");
 const sequelize = require("../database");
 
-const Template = sequelize.define("Template", {
+const Form = sequelize.define("Form", {
   title: {
     type: DataTypes.STRING,
     allowNull: false,
@@ -12,4 +12,4 @@ const Template = sequelize.define("Template", {
   },
 });
 
-module.exports = Template;
+module.exports = Form;

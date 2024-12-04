@@ -4,11 +4,11 @@ const PORT = process.env.PORT || 5000;
 
 const sequelize = require("./database");
 const { User, Template, Form, Comment, Like } = require("./models/index");
-const authRoutes = require("./routes/auth");
-const templateRoutes = require("./routes/templates");
-const formRoutes = require("./routes/forms");
-const commentRoutes = require("./routes/comments");
-const likeRoutes = require("./routes/likes");
+const authRoutes = require("./routes/auth"); // Ensure this matches your filename
+const templateRoutes = require("./routes/templates"); // Ensure this matches your filename
+const formRoutes = require("./routes/forms"); // Ensure this matches your filename
+const commentRoutes = require("./routes/comments"); // Ensure this matches your filename
+const likeRoutes = require("./routes/likes"); // Ensure this matches your filename
 
 app.use(express.json());
 app.use("/api/auth", authRoutes);

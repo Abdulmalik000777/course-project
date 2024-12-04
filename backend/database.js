@@ -1,22 +1,10 @@
 const { Sequelize } = require("sequelize");
 
-const sequelize = new Sequelize(
-  "course_project_db",
-  "your_username",
-  "your_password",
-  {
-    host: "localhost",
-    dialect: "mysql",
-  }
-);
-
-sequelize
-  .authenticate()
-  .then(() => {
-    console.log("Connection has been established successfully.");
-  })
-  .catch((err) => {
-    console.error("Unable to connect to the database:", err);
-  });
+const sequelize = new Sequelize("course_project_db", "root", "abdulmalik99", {
+  host: "localhost",
+  dialect: "mysql",
+  port: 3306,
+  logging: false,
+});
 
 module.exports = sequelize;

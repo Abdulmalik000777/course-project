@@ -1,16 +1,17 @@
-// src/routes/templates.js
+// backend/routes/templates.js
 const express = require("express");
 const router = express.Router();
+const { Template } = require("../models");
 
-// Mock data or actual database fetching logic
-const templates = [
-  { id: 1, title: "Template 1", description: "Description 1" },
-  { id: 2, title: "Template 2", description: "Description 2" },
-];
-
-// Define the endpoint
-router.get("/templates", (req, res) => {
-  res.json(templates);
+// Example route to fetch templates
+router.get("/", async (req, res) => {
+  try {
+    const templates = await Template.findAll();
+    res.json(templates);
+  } catch (error) {
+    console.error("Error fetching templates:", error);
+    res.status(500).send("Server Error");
+  }
 });
 
 module.exports = router;

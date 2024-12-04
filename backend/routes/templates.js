@@ -22,19 +22,6 @@ router.get("/", async (req, res) => {
   }
 });
 
-// Get a template by ID
-router.get("/:id", async (req, res) => {
-  try {
-    const template = await Template.findByPk(req.params.id);
-    if (!template) {
-      return res.status(404).json({ message: "Template not found" });
-    }
-    res.json(template);
-  } catch (error) {
-    res.status(500).json({ message: "Server error" });
-  }
-});
-
 // Update a template
 router.put("/:id", async (req, res) => {
   try {
