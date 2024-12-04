@@ -1,0 +1,13 @@
+/* src/custom.css */
+.container {
+  padding: 20px;
+}
+
+h1,
+h2 {
+  margin-bottom: 20px;
+}
+
+.d-flex {
+  justify-content: space-around;
+}

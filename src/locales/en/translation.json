@@ -2,8 +2,5 @@
   "welcome": "Welcome",
   "login": "Login",
   "register": "Register",
-  "dashboard": "Dashboard",
-  "template": "Template",
-  "form": "Form",
-  "admin": "Admin"
+  "dashboard": "Dashboard"
 }

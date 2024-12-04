@@ -1,23 +1,25 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
-import translationEN from "./locales/en/translation.json";
-import translationUZ from "./locales/uz/translation.json";
+import LanguageDetector from "i18next-browser-languagedetector";
+import HttpApi from "i18next-http-backend";
 
-const resources = {
-  en: {
-    translation: translationEN,
-  },
-  uz: {
-    translation: translationUZ,
-  },
-};
-
-i18n.use(initReactI18next).init({
-  resources,
-  lng: "en", // default language
-  interpolation: {
-    escapeValue: false,
-  },
-});
+i18n
+  .use(HttpApi)
+  .use(LanguageDetector)
+  .use(initReactI18next)
+  .init({
+    fallbackLng: "en",
+    debug: true,
+    detection: {
+      order: ["queryString", "cookie"],
+      cache: ["cookie"],
+    },
+    backend: {
+      loadPath: "/locales/{{lng}}/{{ns}}.json",
+    },
+    interpolation: {
+      escapeValue: false,
+    },
+  });
 
 export default i18n;

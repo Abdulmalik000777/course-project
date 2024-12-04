@@ -1,9 +1,6 @@
 {
-  "welcome": "Hush Kelibsiz",
-  "login": "Login",
-  "register": "Registratsiya",
-  "dashboard": "Dashboard",
-  "template": "Template",
-  "form": "Form",
-  "admin": "Admin"
+  "welcome": "Xush kelibsiz",
+  "login": "Kirish",
+  "register": "Ro‘yxatdan o‘tish",
+  "dashboard": "Panel"
 }

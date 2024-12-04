@@ -1,4 +1,5 @@
-body {
-  background-color: black;
-  color: white;
+/* src/dark.css */
+.App.dark {
+  background-color: #333333;
+  color: #ffffff;
 }

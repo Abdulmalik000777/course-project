@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import ExampleCard from "../components/ExampleCard";
 
-function Dashboard() {
+const Dashboard = () => {
   const [templates, setTemplates] = useState([]);
 
   useEffect(() => {
@@ -10,7 +11,7 @@ function Dashboard() {
         const res = await axios.get("/api/templates");
         setTemplates(res.data);
       } catch (error) {
-        console.error("Error fetching templates", error);
+        console.error("Error fetching templates:", error);
       }
     };
 
@@ -20,15 +21,17 @@ function Dashboard() {
   return (
     <div className="container">
       <h2>Dashboard</h2>
-      <ul className="list-group">
+      <div className="d-flex flex-wrap">
         {templates.map((template) => (
-          <li key={template.id} className="list-group-item">
-            {template.title}
-          </li>
+          <ExampleCard
+            key={template.id}
+            title={template.title}
+            text={template.description}
+          />
         ))}
-      </ul>
+      </div>
     </div>
   );
-}
+};
 
 export default Dashboard;
